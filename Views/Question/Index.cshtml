@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h3>Вопросы</h3>
+    <form asp-controller="question" asp-action="submit">
+    <ol type="1">
+        @foreach (var question in ViewBag.Questions)
+        {
+            <li>
+                @question.Content
+                <input type="hidden" name="QuestionId" value="question.IdQuestion" />
+                <ol type="a">
+                    @foreach (var answer in question.Answers)
+                    {
+                        <li>
+                            <input type="radio" name="questions_@question.IdQuestion"
+                                   value="@answer.IdAnswer" />
+                            @answer.Content
+                        </li>
+                    }
+                </ol>
+            </li>
+        }
+    </ol>
+    <input type="submit" value="Отправить ответы"/>
+    </form>
+</body>
+</html>
