@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\sounds\hello-new-punter-2008-short.mp3" />
+    <None Include="wwwroot\sounds\sound_background.mp3" />
+    <None Include="wwwroot\sounds\sound_right.mp3" />
+    <None Include="wwwroot\sounds\sound_wrong.mp3" />
+    <None Include="wwwroot\video\Zastavka.mp4" />
   </ItemGroup>
 
   <ItemGroup>

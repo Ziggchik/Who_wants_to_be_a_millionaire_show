@@ -1,16 +1,24 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Конец игры</title>
+    <style type="text/css">
+        body {
+            color: white;
+            width: 70%;
+            height: 100%;
+            background: url('https://www.paparazzi.ru/upload/wysiwyg_files/img/1605939286.jpg') no-repeat;
+            background-size: cover;  
+        }
+    </style>
 </head>
 <body>
     <h3>Результаты игры</h3>
+    <audio autoplay="autoplay">
+        @*<source src="https://zvukipro.com/uploads/files/2019-03/1551975254_hello-new-punter-2008-long.mp3">*@
+        <source src="https://zvukipro.com/uploads/files/2019-03/1551975203_closing-titles-2008-v2.mp3">
+    </audio>
     Деньги: @ViewBag.score
 </body>
 </html>

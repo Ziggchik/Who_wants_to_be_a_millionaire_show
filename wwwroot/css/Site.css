@@ -1,0 +1,38 @@
+﻿body {
+}
+h3 {
+    color: red;
+}
+
+.btn-next {
+    color: red;
+    text-decoration: none;
+}
+
+    .btn-next:target {
+        color: white;
+        text-decoration: none;
+    }
+a:link {
+    color: red;
+    text-decoration: none;
+}
+
+a:visited {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a:active {
+    color: red;
+    text-decoration: none;
+}
+a {
+    color: red;
+    text-decoration: none;
+}

@@ -1,31 +1,52 @@
-﻿<html>
+﻿<!DOCTYPE html>
+<html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Кто хочет стать миллионером</title>
+    <link href="~/css/Site.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            color: white;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.discordapp.com/attachments/262842182153666561/884796948639531008/be8f115bb40dc784.jpeg') no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
     <h3>Вопросы</h3>
-    <form asp-controller="question" asp-action="submit">
-    <ol type="1">
-        @foreach (var question in ViewBag.Questions)
-        {
-            <li>
-                @question.Content
-                <input type="hidden" name="QuestionId" value="question.IdQuestion" />
-                <ol type="a">
-                    @foreach (var answer in question.Answers)
-                    {
-                        <li>
-                            <input type="radio" name="questions_@question.IdQuestion"
-                                   value="@answer.IdAnswer" />
-                            @answer.Content
-                        </li>
-                    }
-                </ol>
-            </li>
-        }
-    </ol>
-    <input type="submit" value="Отправить ответы"/>
-    </form>
+    @*<video id="zastavka" src="~/video/Zastavka.mp4" controls width="250" height="250" loop/>*@
+    @*<video id="zastavka" src="https://youtu.be/u-BXrb6ryJ0" controls width="250" height="250" loop />*@
+    <audio autoplay="autoplay">
+        <source src="https://millionaire-school.netlify.com/sounds/lets_play.mp3">
+        @*<source src="https://zvukipro.com/uploads/files/2019-03/1551975254_hello-new-punter-2008-long.mp3">*@
+    </audio>
+     @*Деньги: @ViewBag.score*@
+        <form asp-controller="question" asp-action="submit">
+            <ol type="1">
+                @foreach (var question in ViewBag.Questions)
+                {
+                    <li>
+                        @question.Content
+                        <input type="hidden" name="QuestionId" value="@question.IdQuestion" />
+                        <ol type="a">
+                            @foreach (var answer in question.Answers)
+                            {
+                                <li>
+                                    <input type="radio" name="question_@question.IdQuestion"
+                                           value="@answer.IdAnswer" />
+                                    @answer.Content
+                                </li>
+                            }
+                        </ol>
+                    </li>
+                }
+            </ol>
+            <input type="submit" value="Отправить ответы" />
+        </form>
+        @*<button>*@
+            @*@Html.ActionLink("Следующий вопрос", "Index", new { questionNum = ((int)Html.ViewData["QuestionNum"] + 1) }, new { id = "btn", @class = "btn-next" })*@
+        @*</button>*@
 </body>
 </html>
