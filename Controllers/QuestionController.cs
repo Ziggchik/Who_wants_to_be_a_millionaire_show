@@ -30,23 +30,33 @@ namespace Who_wants_to_be_a_millionaire_show.Controllers
         [Route("submit")]
         public IActionResult Submit(IFormCollection iformCollection)
         {
+            string status = "";
             int score = 100;
             string[] questionIDs = iformCollection["QuestionId"];
             foreach (var QuestionId in questionIDs)
             {
                 int answeridcorrect = db.Questions.Find(int.Parse
                 (QuestionId)).Answers.Where(a => a.Correct == true).FirstOrDefault().IdAnswer;
-                if (answeridcorrect == int.Parse(iformCollection["question_"
-                    + QuestionId]))
+                try
                 {
-                    score = score * 2;
+                    if (answeridcorrect == int.Parse(iformCollection["question_"
+                        + QuestionId]))
+                    {
+                        score = score * 2;
+                    }
+                    else
+                    {
+                        //условие проигрыша
+                        //score = 0;
+                    }
                 }
-                else
+                catch
                 {
-                    //условие проигрыша
-                    //score = 0;
+                    status = "Вы не ответили на все вопросы";
+                    score = 0;
                 }
             }
+            ViewBag.status = status; 
             ViewBag.score = score;
             return View("GameOver");
         }
