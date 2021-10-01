@@ -29,7 +29,7 @@
 3) Press button "Отправить ответы"
 4) In the window that opens, you can view the results of your game
 ## Architecture:
-1) The project create with ASP.NET Core 2.1 MVK and using language C#.
+1) The project create with ASP.NET Core 2.1 MVC and using language C#.
 2) The project uses Microsoft.EntityFrameworkCore 2.1.1
 3) The project uses addons for Microsoft.EntityFrameworkCore (Tools, Proxies, SqlServer)
 4) Database create on SqlServer and use query language T-sql
